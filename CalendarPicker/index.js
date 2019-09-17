@@ -44,7 +44,8 @@ export default class CalendarPicker extends Component {
     onDateChange: () => {
       console.log("onDateChange() not provided");
     },
-    enableDateChange: true
+    enableDateChange: true,
+      makeStyleCustom: {}
   };
 
   componentDidUpdate(prevProps, prevState) {
@@ -260,7 +261,10 @@ export default class CalendarPicker extends Component {
       maxRangeDuration,
       swipeConfig,
       customDatesStyles,
-      enableDateChange
+      enableDateChange,
+        prevComponent,
+        nextComponent,
+        makeStyleCustom,
     } = this.props;
 
     let _disabledDates = [];
@@ -330,12 +334,16 @@ export default class CalendarPicker extends Component {
             previousTitle={previousTitle}
             nextTitle={nextTitle}
             textStyle={textStyle}
+            prevComponent={prevComponent}
+            nextComponent={nextComponent}
+            makeStyleCustom={makeStyleCustom}
           />
           <Weekdays
             styles={styles}
             startFromMonday={startFromMonday}
             weekdays={weekdays}
             textStyle={textStyle}
+            makeStyleCustom={makeStyleCustom}
           />
           <DaysGridView
             enableDateChange={enableDateChange}
@@ -359,6 +367,7 @@ export default class CalendarPicker extends Component {
             selectedRangeStyle={selectedRangeStyle}
             selectedRangeEndStyle={selectedRangeEndStyle}
             customDatesStyles={customDatesStyles}
+            makeStyleCustom={makeStyleCustom}
           />
         </View>
       </Swiper>

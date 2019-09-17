@@ -30,11 +30,13 @@ export default function Day(props) {
     disabledDates,
     minRangeDuration,
     maxRangeDuration,
-    enableDateChange
+    enableDateChange,
+    makeStyleCustom
   } = props;
 
   const thisDay = moment({year, month, day});
   const today = moment();
+  const dayStyle = makeStyleCustom.day? makeStyleCustom.day : {};
 
   let dateOutOfRange;
   let daySelectedStyle = styles.dayButton; // may be overridden depending on state
@@ -168,7 +170,7 @@ export default function Day(props) {
           disabled={!enableDateChange}
           style={[customDateStyle, daySelectedStyle, propSelectedDayStyle ]}
           onPress={() => onPressDay(day) }>
-          <Text style={[styles.dayLabel, textStyle, customTextStyle, selectedDayColorStyle]}>
+          <Text style={[styles.dayLabel, textStyle, dayStyle, customTextStyle, selectedDayColorStyle]}>
             { day }
           </Text>
         </TouchableOpacity>
