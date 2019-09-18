@@ -124,7 +124,7 @@ export default function Day(props) {
         selectedStartDate &&
         isThisDaySameAsSelectedStart) {
       daySelectedStyle = styles.selectedDay;
-      selectedDayColorStyle = [styles.selectedDayLabel, isToday && todayTextStyle];
+      selectedDayColorStyle = [isToday && todayTextStyle, styles.selectedDayLabel];
       // selectedDayStyle prop overrides selectedDayColor (created via makeStyles)
       propSelectedDayStyle = selectedDayStyle || styles.selectedDayBackground;
     }

@@ -23,7 +23,7 @@ export function makeStyles(scaler, backgroundColor, textColor, todayBackgroundCo
 
     return {
         calendar: {
-            height: 320*scaler,
+            height: 270*scaler,
             marginTop: 10*scaler
         },
 
